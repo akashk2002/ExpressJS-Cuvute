@@ -126,6 +126,9 @@ app.get('/users/odd',(req,res)=>{
   res.send(usersWithOddId)
 })
 
+app.get('/aboutus',(req,res)=>{
+  res.sendFile(__dirname + '/about.html')
+})
 
 
 app.listen(port, () => {
