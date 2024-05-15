@@ -130,6 +130,11 @@ app.get('/aboutus',(req,res)=>{
   res.sendFile(__dirname + '/about.html')
 })
 
+app.get('/aboutus-old',(req,res)=>{
+  res.redirect('/aboutus')
+})
+
+
 app.get('/download-img',(req,res)=>{
   res.download(__dirname+'/assests/C1997T01.JPG')
 })
