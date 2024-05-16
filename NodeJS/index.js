@@ -102,7 +102,7 @@ const post = [
 app.get('/', (req, res) => {
   const x = 100;
   // res.send('Hello World!');
-  res.send({x: 'Akash'})
+  res.send({x: 'Kanyadhara Akash'})
 })
 
 
