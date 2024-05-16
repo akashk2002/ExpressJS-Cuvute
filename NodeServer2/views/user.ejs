@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%= firstName %> <%= lastName %></title>
     <style>
         div{
             width: max-content;
@@ -16,8 +16,10 @@
     </style>
 </head>
 <body>
-    <h1>Kanyadhara</h1>
-    <img src="https://reqres.in/img/faces/7-image.jpg"/>
-    <p>akash@gamil.com</p>
+    <div>
+    <h1><%= firstName %> <%= lastName %></h1>
+    <img src="<%= avatar %>"/>
+    <p><%= email %></p>
+</div>
 </body>
 </html>
