@@ -30,23 +30,76 @@ app.set('view engine', 'ejs')
 //     res.send('EJS and Request Parameters')
 // })
 
-app.get('/user/akash',(req,res)=>{
-    res.render('user',{
+const USERS = [
+    {
+        username:'akash',
         firstName: 'Akash',
         lastName:'Kanyadhara',
-        avatar:'https://reqres.in/img/faces/7-image.jpg',
-        email:'akash@gmail.com',
-    })
+        avatar:'https://reqres.in/img/faces/1-image.jpg',
+        email:'akash@gmail.com'
+    },
+    {
+        username:'sai',
+        firstName: 'sai',
+        lastName:'Kumar',
+        avatar:'https://reqres.in/img/faces/2-image.jpg',
+        email:'sai@gmail.com'
+    },
+    {
+        username:'rahul',
+        firstName: 'rahul',
+        lastName:'Gupta',
+        avatar:'https://reqres.in/img/faces/3-image.jpg',
+        email:'rahul@gmail.com'
+    },     
+
+
+]
+
+app.get('/users/:username',(req, res)=>{
+    const {username} = req.params
+    // const username = req.paramas.username
+    const userDeatails = USERS.find(user => user.username === username)
+    if(userDeatails) {
+        res.render('user', userDeatails)
+
+    }
+    else{
+        res.sendFile(__dirname+'/pages/notfound.html')
+    }
+    
+   
 })
 
-app.get('/user/sai',(req,res)=>{
-    res.render('user',{
-        firstName: 'Sai',
-        lastName:'Kumar',
-        avatar:'https://reqres.in/img/faces/7-image.jpg',
-        email:'sai@gmail.com',
-    })
-})
+
+
+
+
+
+
+
+
+
+
+
+
+// app.get('/user/akash',(req,res)=>{
+//     res.render('user',{
+//         firstName: 'Akash',
+//         lastName:'Kanyadhara',
+//         avatar:'https://reqres.in/img/faces/7-image.jpg',
+//         email:'akash@gmail.com',
+//     })
+// })
+
+// app.get('/user/sai',(req,res)=>{
+//     res.render('user',{
+//         firstName: 'Sai',
+//         lastName:'Kumar',
+//         avatar:'https://reqres.in/img/faces/7-image.jpg',
+//         email:'sai@gmail.com',
+//     })
+// })
 
 
 // app.get('/user/kanyadhara',(req,res)=>{
