@@ -8,7 +8,11 @@ const customMiddleware = (req,res,next) =>{
     next()
 }
 
-app.get('/me', customMiddleware, (req, res) => {
+//when we use app.use all the routes will use this customMiddleware
+app.use(customMiddleware);
+
+
+app.get('/me', (req, res) => {
     console.log(req.customInfo)
   res.send('Hello World!')
 })
